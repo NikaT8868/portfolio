@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+class TicTacToeArray{
+    public static void main(String args[] ){
+        Scanner keyboard = new Scanner(System.in);
+       
+        char a[];
+        int move;
+         
+         // initializing the board
+         a  = new char[10];//creating ten elements
+         for(int i= 1; i <= 9; i++)
+         a[i] =( char)('0'+ i);
+         printBoard(a);
+         
+         
+         // player x's move
+         System.out.print("player x, enter your move (1-9): ");
+         move = keyboard.nextInt(); // a number between 1 and 9
+         
+         
+         while (movenotValid(a, move)){ 
+          
+          System.out.println("player X,enter a valid move(1-9): ");
+          move = keyboard.nextInt();
+         }
+         if(move < 1 || move > 9)
+           System.out.println("Invalid Input");
+        
+         a[move] = 'x';
+         printBoard(a);// see x's move
+          
+          //player o's move
+         
+         System.out.print("player x, enter your move (1-9): ");
+         move = keyboard.nextInt(); // a number between 1 and 9
+         
+         while (movenotValid(a, move)){ 
+          
+          System.out.println("player o, enter a valid move(1-9): ");
+          move = keyboard.nextInt();
+         }
+         
+        if(move < 1 || move > 9)
+           System.out.println("Invalid Input");
+           
+           
+         a[move] = 'o';
+         printBoard(a);// see o's move (and x's)
+             }
+     
+    static boolean movenotValid(char c[], int move){
+     
+     if(move < 1 || move > 9)
+       return true;// the move is not valid
+       
+       
+     if (c[move] == '0'+ move )
+        return false; // move is valid
+        
+     else
+     return true;// move is not valid
+     
+    }
+    static void printBoard(char c[]){
+           for(int i = 0; i < 20; i++)// add 20 empty lines to move everything
+              System.out.println();
+       
+        System.out.println(" " + c[1] + " | " + c[2] + " | " + c[3]);
+        System.out.println("---+---+--");
+        System.out.println(" " + c[4] + " | " + c[5] + " | " + c[6]);
+        System.out.println("---+---+--");
+         System.out.println(" " + c[7] + " | " + c[8] + " | " + c[9]);
+        
+        
+    }
+}
