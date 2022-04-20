@@ -151,7 +151,7 @@
   
   /* Add a color on mouse-over */
   ul.breadcrumb li a:hover {
-    color: #017e7a;
+    color: #052524;
     text-decoration: underline;
   }
   
@@ -209,7 +209,7 @@
   
   /* Add an active class to highlight the current page */
   .topnav a.active {
-    background-color: #2d0797;
+    background-color: #0b0222;
     color: white;
   }
   

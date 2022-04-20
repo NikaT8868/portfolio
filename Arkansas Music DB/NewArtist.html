@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ARMusicDB</title>
+    <title>ARMDB</title>
     <meta name="description" content="Website is intended to promote Arkansas musicians
-     that provide information and songs by artists who have ties to the state of Arkansas.">
+    that provide information and songs by artists who have ties to the state of Arkansas.">
     <meta name="keywords" content="arkansas, album, song, artists, celebrities, music festival">
     <meta name="author" content="Nika Tavasoly">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,77 +17,74 @@
     <!-- Add website favicon -->
     <link rel="shortcut icon" href="assets/images/music.ico" type="image/x-icon" />
   </head>
-  <body>
+  <body>    
     <div id="container">
-      <!-- Breadcrumb Pagination
-      <div class="breadContnr">
-        <ul class="breadcrumb">
-          <li><a href="index.html">Home</a></li>
-        </ul>
-      </div> -->
+      <!-- Breadcrumb Pagination -->
+      <!--<ul class="breadcrumb">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="#">Browse by Name</a></li>
+        <li><a href="#">Browse Albums</a></li>
+      </ul>	-->
+
       <!-- Responsive Topnav with Dropdown SubNavBar Menu -->
-      <div class="topnav" id="dbTopnav"> 
-        
-  	  <a href="#" class="active"><i class="fa fa-home"></i> Home</a>
+      <div class="topnav" id="dbTopnav">
+        <!--<a href="#"><img class="websiteLogo" src="assets/images/websiteLogo4.png" alt="Arkansas Music Database"></a>-->
+        <a href="#home" onclick="openRedirect('index.html')"><i class="fa fa-home"></i> Home</a>
         <div class="dropdown">
           <button class="dropbtn">Browse by Name<i class="fa fa-caret-down"></i></button>
           <div class="dropdown-content">
+            <a href="#" class="active" onclick="openRedirect('BrowseAlbums.html')">Browse Albums</a>
             <a href="BrowseArtists.html">Browse Artists</a>
-            <a href="BrowseAlbums.html">Browse Albums</a>
-            <a href="BrowseSongs.html">Browse Songs</a>
-
-            
+            <a href="BrowseSongs.html">Browse Songs</a> 
           </div>
         </div>
         <div class="dropdown">
           <button class="dropbtn">Search<i class="fa fa-caret-down"></i></button>
           <div class="dropdown-content">
+            <a href="advAlbumsSearch.html">Advanced Search Albums</a>
             <a href="advArtistSearch.html">Advanced Search Artists</a>
             <a href="advSongSearch.html">Advanced Search Songs</a>
-            <a href="advAlbumsSearch.html">Advanced Search Albums</a>
+
           </div>
         </div>
-  	    
         <a href="NewArtist.html">Submit New Artist</a>
         <a href="about.html">About</a>
         <!-- Trigger/Open The Modal -->
-        <a href="#contact" id="CntcMdlBtn">Contact</a>
-
+        <a href="#contact" id="CntcMdlBtn">Contact</a>    
+                
           <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-  	  <a href="javascript:void(0);" class="icon" onclick="topNavIconClk()">&#9776;</a>  
+  	  <a href="javascript:void(0);" class="icon" onclick="topNavIconClk()">&#9776;</a>
+  	 
+      </div>
+      <br>
+      <h2 id="pagetitle">
+        Submit New Artist
+      </h2>
+<!--<body onload="indexLoad()">-->
+
+
+
+<!--<div id="displayPane" class="row content">-->
+
+	<p>We source our artist data from <a href="https://www.theaudiodb.com/" target="_blank"> AudioDB.com </a> If you know of an artist that is missing from this database, please help out.</p>
+	
+  
+  
+  
+	
+  
     
-      </div>
-    </div> 
-    <!-- Hero Image-->
-    <a  href="http://nlrpr.org/parks/old_mill" target="_blank">
-      <div class="armdb_Bridge_image">
-        <div class="armdb_hero_text_center">
-          <h1>The Arkansas Music Database</h1>
-  	  </div>
-  	  <div class="armdb_hero_text_block">
-  	    <br>The Big Dam Bridge is 4226-foot </br>
-        <br>bridge which the longest bridge built </br>
-        <br>for pedestrian and bicycle traffic in North America.</br>
+  <div class="formcontainer">
+	<iframe class="responsive-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSdw3BOmjwa-zgoC7LR7SWKKs3W5J2q-mGfJ-K3JAUmUuPxh2A/viewform?embedded=true" frameborder="0">Loading...
+	</iframe>
+  </div>
+  
+  <!--</div>-->
+  
 
-  	  </div>
-      </div>
-    </a>
-    <div id="containerB">
-      
-  	  <!-- Modal box for contact info -->
-      <div id="CntcModal" class="cntc-modal">
-        <!-- Modal content -->
-        <div class="cntc-modal-content">
-          <span class="modal-close">&times;</span>
-          <h2>Contact</h2>
-          <p>htavasoly@ualr.edu</p>
-        </div>
-      </div>  
-    </div>
+  
+</div>
 
-    <!--<footer class="bg-dark pb-2 pt-1 text-secondary text-center fixed-bottom">&copy 2022 Nika Tavasoly | <a href="#top">Back to Top</a>
-    </footer>-->
-
-    <script src="assets/scripts/index.js"></script>
-  </body>
+<script type="text/javascript" src="assets/scripts/index.js"></script> 
+</body>
 </html>
