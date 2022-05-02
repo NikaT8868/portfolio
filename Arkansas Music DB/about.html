@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+  <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ARMDB</title>
+    <meta name="description" content="Website is intended to promote Arkansas musicians
+    that provide information and songs by artists who have ties to the state of Arkansas.">
+    <meta name="keywords" content="arkansas, album, song, artists, celebrities, music festival">
+    <meta name="author" content="Nika Tavasoly">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/ArMusicDatabase.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="shortcut icon" href="assets/images/music.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div id="container">
+      
+      <!-- Breadcrumb Pagination -->
+  	<!--<ul class="breadcrumb">
+  	  <li><a href="index.html">Home</a></li>
+  	  <li><a href="#">About</a></li>
+  	</ul>-->
+  	<!-- Create A Responsive Topnav with Dropdown SubNavBar Menu -->
+  	<div class="topnav" id="dbTopnav">
+  	  
+  	  <a href="#home" onclick="openRedirect('index.html')"><i class="fa fa-home"></i> Home</a>
+  	  <div class="dropdown">
+  	    <button class="dropbtn">Browse by Name<i class="fa fa-caret-down"></i></button>
+  		<div class="dropdown-content">
+  		  <a href="BrowseArtists.html">Browse Artists</a>
+  		  <a href="BrowseAlbums.html">Browse Albums</a>
+  		  <a href="BrowseSongs.html">Browse Songs</a>
+  		</div>
+  	  </div>
+  	  <div class="dropdown">
+  		<button class="dropbtn">Search<i class="fa fa-caret-down"></i></button>
+  		<div class="dropdown-content">
+  		  <a href="advArtistSearch.html">Advanced Search Artists</a>
+  		  <a href="advSongSearch.html">Advanced Search Songs</a>
+          <a href="advAlbumsSearch.html">Advanced Search Albums</a>
+  	    </div>
+  	  </div>
+  	  <a href="NewArtist.html">Submit New Artist</a>
+        <a href="about.html" class="active">About</a>
+        <!-- Trigger/Open The Modal -->
+        <a href="#contact" id="CntcMdlBtn">Contact</a>
+        
+        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  	  <a href="javascript:void(0);" class="icon" onclick="topNavIconClk()">&#9776;</a>
+  	</div>
+  	<br>
+  	<div class="about_container">
+  	  <h1 id="pagetitle">About Page</h1>
+	    <p> This website allows people from all around the world to find out relevant information about Arkansas musicians and their 
+            songs. Offering a biography and discography can allow people to gain access to items 
+            they may not have realized existed.</p>
+        <h2>Update</h2>
+        <p>The Website will be updated every time a new artist is added into the main database (Audiodb) or when a new artist is 
+            added manually by project manager.</p>
+        
+        <h1>Attributions</h1>
+        <p>This website has been designed for educational purposes and strives to be user-friendly for all audiences.</p>
+        <p>It complies with the current Terms of Use at <a href="https://www.theaudiodb.com/" target="_blank">www.theaudiodb.com</a></p>
+        <p>Official AudioDB website link: <a href=" https://www.theaudiodb.com/" target="_blank">www.theaudiodb.com</a></p>
+		
+      </div> 
+  	  <!-- Modal box for contact info -->
+      <div id="CntcModal" class="cntc-modal">
+        <!-- Modal content -->
+        <div class="cntc-modal-content">
+          <span class="modal-close">&times;</span>
+          <h2>Contact</h2>
+          <p>htavasoly@ualr.edu</p>
+        </div>
+      </div>      
+    </div>	
+    
+    <script src="assets/scripts/index.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- jQuery slideToggle() Method  -->
+    <script> 
+      $(document).ready(function(){
+        $("#flip").click(function(){
+      	$("#panel").slideToggle("slow");
+        });
+      });
+    </script>
+  </body>
+</html>
