@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-  <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ARMDB</title>
+    <title>ARMusicDB</title>
     <meta name="description" content="Website is intended to promote Arkansas musicians
-    that provide information and songs by artists who have ties to the state of Arkansas.">
+     that provide information and songs by artists who have ties to the state of Arkansas.">
     <meta name="keywords" content="arkansas, album, song, artists, celebrities, music festival">
     <meta name="author" content="Nika Tavasoly">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,439 +15,159 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Add website favicon -->
     <link rel="shortcut icon" href="assets/images/music.ico" type="image/x-icon" />
-  </head>
-  <body>
-    <div id="container">
-      <!-- Breadcrumb Pagination --> 
+</head>
+    <body>
+        
+      <div id="container">
+      
+        <!-- Breadcrumb Pagination -->
       <!--<ul class="breadcrumb">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">Search</a></li>
-        <li><a href="#">Advanced Search Artists</a></li>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="#">About</a></li>
       </ul>-->
-
-      <!-- Responsive Topnav with Dropdown SubNavBar Menu -->
+      <!-- Create A Responsive Topnav with Dropdown SubNavBar Menu -->
       <div class="topnav" id="dbTopnav">
-        <!--<a href="#"><img class="websiteLogo" src="assets/images/websiteLogo4.png" alt="Arkansas Music Database"></a>-->
-        <a href="#home" onclick="openRedirect('homepage.html')"><i class="fa fa-home"></i> Home</a>
+        
+        <!--<a href="#home" onclick="openRedirect('homepage.html')"><i class="fa fa-home"></i> Home</a>-->
+        <a href="homepage.html" class="active">Home</a>
         <div class="dropdown">
           <button class="dropbtn">Browse by Name<i class="fa fa-caret-down"></i></button>
-          <div class="dropdown-content">
-            <a href="BrowseAlbums.html">Browse Albums</a>
-            <a href="BrowseArtists.html">Browse Artists</a>
-            <a href="BrowseSongs.html">Browse Songs</a>
-          </div>
+        <div class="dropdown-content">
+          <a href="BrowseArtists.html">Browse Artists</a>
+          <!--<a href="BrowseAlbums.html">Browse Albums</a>
+          <a href="BrowseSongs.html">Browse Songs</a>-->
+        </div>
         </div>
         <div class="dropdown">
-          <button class="dropbtn">Search<i class="fa fa-caret-down"></i></button>
-          <div class="dropdown-content">
-            <a href="advAlbumsSearch.html">Advanced Search Albums</a>
-            <a href="#" class="active" onclick="openRedirect('advArtistSearch.html')">Advanced Search Artists</a>
+        <button class="dropbtn">Search<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content">
+          <a href="ArtistSearch.html">Search Artists</a>
+          <!--<a href="advSongSearch.html">Advanced Search Songs</a>
+            <a href="advAlbumsSearch.html">Advanced Search Albums</a>-->
           </div>
         </div>
-        <a href="usefulLinks.html">Links</a>
-        <a href="about.html">About</a>
-        <!-- Trigger/Open The Modal -->
-        <a href="#contact" id="CntcMdlBtn">Contact</a>
-        
-        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-  	  <a href="javascript:void(0);" class="icon" onclick="topNavIconClk()">&#9776;</a>
+        <a href="NewArtist.html">Submit New Artist</a>
+          <a href="about.html" class="active">About</a>
+          <!-- Trigger/Open The Modal -->
+          <a href="#contact" id="CntcMdlBtn">Contact</a>
+          
+          <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+        <a href="javascript:void(0);" class="icon" onclick="topNavIconClk()">&#9776;</a>
       </div>
-      <br>
-      <h2 id="pagetitle">Artist Search</h2>
-      <!-- Search Bar -->
-      <div class="SearchBar">
-        <div class="search-container">
-          <input id="personname" type="text" placeholder="Enter Artist Name..." name="search">
-          <button id="SrchPerBtn" onclick="PersonSearch()" type="submit"><i class="fa fa-search"></i></button>
-        </div>
-      </div>
-      <!-- To display the URL on the page go to index.js and follow the directions -->
-      <div id="url1"></div><br>
-      <!-- Responsive MTT Section -->
-      <!-- Search Results -->
-      <div class="mttSection">
-        <div class="mttRow">
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path0">
-              <div class="txtshadow" id="name0"></div>
-              <div id="known_for_department0"></div>
-              <div id="popularity0"></div>
-              <div id="gender0"></div>
-              <div id="id0"></div>
-              <div id="adult0"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path1">
-              <div class="txtshadow" id="name1"></div>
-              <div id="known_for_department1"></div>
-              <div id="popularity1"></div>
-              <div id="gender1"></div>
-              <div id="id1"></div>
-              <div id="adult1"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path2">
-              <div class="txtshadow" id="name2"></div>
-              <div id="known_for_department2"></div>
-              <div id="popularity2"></div>
-              <div id="gender2"></div>
-              <div id="id2"></div>
-              <div id="adult2"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path3">
-              <div class="txtshadow" id="name3"></div>
-              <div id="known_for_department3"></div>
-              <div id="popularity3"></div>
-              <div id="gender3"></div>
-              <div id="id3"></div>
-              <div id="adult3"></div>
-            </div>
-          </div>
-        </div>
-        <div class="mttRow">
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path4">
-              <div class="txtshadow" id="name4"></div>
-              <div id="known_for_department4"></div>
-              <div id="popularity4"></div>
-              <div id="gender4"></div>
-              <div id="id4"></div>
-              <div id="adult4"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path5">
-              <div class="txtshadow" id="name5"></div>
-              <div id="known_for_department5"></div>
-              <div id="popularity5"></div>
-              <div id="gender5"></div>
-              <div id="id5"></div>
-              <div id="adult5"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path6">
-              <div class="txtshadow" id="name6"></div>
-              <div id="known_for_department6"></div>
-              <div id="popularity6"></div>
-              <div id="gender6"></div>
-              <div id="id6"></div>
-              <div id="adult6"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path7">
-              <div class="txtshadow" id="name7"></div>
-              <div id="known_for_department7"></div>
-              <div id="popularity7"></div>
-              <div id="gender7"></div>
-              <div id="id7"></div>
-              <div id="adult7"></div>
-            </div>
-          </div>
-        </div>
-        <div class="mttRow">
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path8">
-              <div class="txtshadow" id="name8"></div>
-              <div id="known_for_department8"></div>
-              <div id="popularity8"></div>
-              <div id="gender8"></div>
-              <div id="id8"></div>
-              <div id="adult8"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path9">
-              <div class="txtshadow" id="name9"></div>
-              <div id="known_for_department9"></div>
-              <div id="popularity9"></div>
-              <div id="gender9"></div>
-              <div id="id9"></div>
-              <div id="adult9"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path10">
-              <div class="txtshadow" id="name10"></div>
-              <div id="known_for_department10"></div>
-              <div id="popularity10"></div>
-              <div id="gender10"></div>
-              <div id="id10"></div>
-              <div id="adult10"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path11">
-              <div class="txtshadow" id="name11"></div>
-              <div id="known_for_department11"></div>
-              <div id="popularity11"></div>
-              <div id="gender11"></div>
-              <div id="id11"></div>
-              <div id="adult11"></div>
-            </div>
-          </div>
-        </div>
-        <div class="mttRow">
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path12">
-              <div class="txtshadow" id="name12"></div>
-              <div id="known_for_department12"></div>
-              <div id="popularity12"></div>
-              <div id="gender12"></div>
-              <div id="id12"></div>
-              <div id="adult12"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path13">
-              <div class="txtshadow" id="name13"></div>
-              <div id="known_for_department13"></div>
-              <div id="popularity13"></div>
-              <div id="gender13"></div>
-              <div id="id13"></div>
-              <div id="adult13"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path14">
-              <div class="txtshadow" id="name14"></div>
-              <div id="known_for_department14"></div>
-              <div id="popularity14"></div>
-              <div id="gender14"></div>
-              <div id="id14"></div>
-              <div id="adult14"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path15">
-              <div class="txtshadow" id="name15"></div>
-              <div id="known_for_department15"></div>
-              <div id="popularity15"></div>
-              <div id="gender15"></div>
-              <div id="id15"></div>
-              <div id="adult15"></div>
-            </div>
-          </div>
-        </div>
-        <div class="mttRow">
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path16">
-              <div class="txtshadow" id="name16"></div>
-              <div id="known_for_department16"></div>
-              <div id="popularity16"></div>
-              <div id="gender16"></div>
-              <div id="id16"></div>
-              <div id="adult16"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path17">
-              <div class="txtshadow" id="name17"></div>
-              <div id="known_for_department17"></div>
-              <div id="popularity17"></div>
-              <div id="gender17"></div>
-              <div id="id17"></div>
-              <div id="adult17"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path18">
-              <div class="txtshadow" id="name18"></div>
-              <div id="known_for_department18"></div>
-              <div id="popularity18"></div>
-              <div id="gender18"></div>
-              <div id="id18"></div>
-              <div id="adult18"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path19">
-              <div class="txtshadow" id="name19"></div>
-              <div id="known_for_department19"></div>
-              <div id="popularity19"></div>
-              <div id="gender19"></div>
-              <div id="id19"></div>
-              <div id="adult19"></div>
-            </div>
-          </div>
-        </div>
-        <div class="mttRow">
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path20">
-              <div class="txtshadow" id="name20"></div>
-              <div id="known_for_department20"></div>
-              <div id="popularity20"></div>
-              <div id="gender20"></div>
-              <div id="id20"></div>
-              <div id="adult20"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path21">
-              <div class="txtshadow" id="name21"></div>
-              <div id="known_for_department21"></div>
-              <div id="popularity21"></div>
-              <div id="gender21"></div>
-              <div id="id21"></div>
-              <div id="adult21"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path22">
-              <div class="txtshadow" id="name22"></div>
-              <div id="known_for_department22"></div>
-              <div id="popularity22"></div>
-              <div id="gender22"></div>
-              <div id="id22"></div>
-              <div id="adult22"></div>
-            </div>
-          </div>
-          <div class="mttColumn">
-            <div class="mttCard">
-              <img id="profile_path23">
-              <div class="txtshadow" id="name23"></div>
-              <div id="known_for_department23"></div>
-              <div id="popularity23"></div>
-              <div id="gender23"></div>
-              <div id="id23"></div>
-              <div id="adult23"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Modal box for contact info -->
-      <div id="CntcModal" class="cntc-modal">
-        <!-- Modal content -->
-        <div class="cntc-modal-content">
-          <span class="modal-close">&times;</span>
-          <h2>Contact</h2>
-          <p> Email : htavasoly@ualr.edu</p>
-        </div>
-      </div>
+       <p>Select an artist from the dropdown list.</p>
+        <p>Click the "Search" button to see information about the selected Artist.</p>
+        <label for="artist">Choose an Artist:</label>
+        <select id="artist">
+      <option>Ronnie Hawkins</option>
+      <option>Point of Grace</option>
+      <option>Lefty Frizzell</option>
+      <option>Michael Burks</option>
+      <option>Pharoah Sanders</option>
+      <option>Collin Raye</option>
+      <option>Joe Nichols</option>
+      <option>Elvis Presley</option>
+      <option>Kris Allen</option>
+      <option>Ne-Yo</option>
+      <option>Charlie Rich</option>
+      <option>Black Oak Arkansas</option>
+      <option>Justin Moore</option>
+      <option>Tracy Lawrence</option>
+      <option>Levon Helm</option>
+      <option>Evanescence</option>
+      <option>Conway Twitty</option>
+      <option>Glen Campbell</option>
+      <option>Johnny Cash</option>
+      <option>Al Green</option>
+      <option>B.B. King</option>
+  </select>
+       <button onclick="search();">Search</button><br><br>
+  <h2>Artist Banner</h2>
+    <img id="artistbanner">
+    <h2>Artist Image</h2>
+    <img id="artistimage">
+    <h2>Artist Origins</h2>
+    <div id="origins"></div>
+    <h2>Artist Biography</h2>
+    <div id="biography"></div>
+    <h2>Album List</h2>
+    <div id="albumlist"></div>
+    <h2>First Album Tracks</h2>
+    <div id="tracklist"></div>      
+       <script>
+  async function search() {
+   
+    // Artist Data
+    // Select Artist from the dropbox; encode the artist name in case there are special characters
+    artistSearchValue = encodeURI(document.getElementById("artist").value);
+    // Create the search URL; APIKEY = 523532
+    artistSearchURL = "https://theaudiodb.com/api/v1/json/523532/search.php?s=" + artistSearchValue;
+    // AJAX call to fetch the data
+    artistObject = await fetch(artistSearchURL);
+    artistJSONText = await artistObject.text();
+    // Parse the JSON string into an object
+    artistData = JSON.parse(artistJSONText);
+    // Display the biography data - Note we display the first result - 0 index
+    document.getElementById("biography").innerHTML = artistData.artists[0].strBiographyEN;
+    //Display where the artist is from
+    document.getElementById("origins").innerHTML = artistData.artists[0].strCountry;
+    // Display the artist picture - Note we display the first result - 0 index; use "/preview" for smaller image
+    document.getElementById("artistbanner").src = artistData.artists[0].strArtistBanner + "/preview";
+    document.getElementById("artistimage").src = artistData.artists[0].strArtistThumb + "/preview";
+      
+    // Album Data - Get the first Album
+    // Get the artist ID from the artist data object; encode the artist ID in case there are special characters
+    albumSearchValue = encodeURI(artistData.artists[0].idArtist);
+    // Create the search URL; 
+    albumSearchURL = "https://theaudiodb.com/api/v1/json/523532/album.php?i=" + albumSearchValue;
+    // AJAX call to fetch the data
+    albumObject = await fetch(albumSearchURL);
+    albumJSONText = await albumObject.text();
+    // Parse the JSON string into an object
+    albumData = JSON.parse(albumJSONText);
+    // Loop through the albums
+    albumList = "";
+    for (i = 0; i < albumData.album.length; i++) {
+        albumList = albumList + albumData.album[i].strAlbum + " (" + albumData.album[i].intYearReleased + ")" + "<br>";
+    }
+    // Display the album names
+    document.getElementById("albumlist").innerHTML = albumList;
+     
+
+    // Track Data - Get the tracks for the first album
+    // Get the album ID from the artist data object; encode the album ID in case there are special characters
+    trackSearchValue = encodeURI(albumData.album[0].idAlbum);
+    // Create the search URL; 
+    trackSearchURL = "https://theaudiodb.com/api/v1/json/523532/track.php?m=" + trackSearchValue;
+    // AJAX call to fetch the data
+    trackObject = await fetch(trackSearchURL);
+    trackJSONText = await trackObject.text();
+    // Parse the JSON string into an object
+    trackData = JSON.parse(trackJSONText);     
+    trackList = "";
+    for (i = 0; i < trackData.track.length; i++) {
+        trackList = trackList + trackData.track[i].strTrack + "<br>";
+    }
+    // Display the track names for first album
+    document.getElementById("tracklist").innerHTML = trackList;
+      
+}
+</script>
+<div id="containerB">
+      
+  <!-- Modal box for contact info -->
+  <div id="CntcModal" class="cntc-modal">
+    <!-- Modal content -->
+    <div class="cntc-modal-content">
+      <span class="modal-close">&times;</span>
+      <h2>Contact</h2>
+      <p>htavasoly@ualr.edu</p>
     </div>
-    <script>
-      /* Trigger Button Click on Enter */
-      var input = document.getElementById("personname");
-      input.addEventListener("keyup", function(event) {
-        if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("SrchPerBtn").click();}
-      });
-      // event listener to grab click on profile_path and call fuction PersonIDSearch
-      document.getElementById("profile_path0").addEventListener("click", function() {PersonIDSearch(0)});
-      document.getElementById("name0").addEventListener("click", function() {PersonIDSearch(0)});
-      document.getElementById("profile_path1").addEventListener("click", function() {PersonIDSearch(1)});
-      document.getElementById("name1").addEventListener("click", function() {PersonIDSearch(1)});
-      document.getElementById("profile_path2").addEventListener("click", function() {PersonIDSearch(2)});
-      document.getElementById("name2").addEventListener("click", function() {PersonIDSearch(2)});
-      document.getElementById("profile_path3").addEventListener("click", function() {PersonIDSearch(3)});
-      document.getElementById("name3").addEventListener("click", function() {PersonIDSearch(3)});
-      document.getElementById("profile_path4").addEventListener("click", function() {PersonIDSearch(4)});
-      document.getElementById("name4").addEventListener("click", function() {PersonIDSearch(4)});
-      document.getElementById("profile_path5").addEventListener("click", function() {PersonIDSearch(5)});
-      document.getElementById("name5").addEventListener("click", function() {PersonIDSearch(5)});
-      document.getElementById("profile_path6").addEventListener("click", function() {PersonIDSearch(6)});
-      document.getElementById("name6").addEventListener("click", function() {PersonIDSearch(6)});
-      document.getElementById("profile_path7").addEventListener("click", function() {PersonIDSearch(7)});
-      document.getElementById("name7").addEventListener("click", function() {PersonIDSearch(7)});
-      document.getElementById("profile_path8").addEventListener("click", function() {PersonIDSearch(8)});
-      document.getElementById("name8").addEventListener("click", function() {PersonIDSearch(8)});
-      document.getElementById("profile_path9").addEventListener("click", function() {PersonIDSearch(9)});
-      document.getElementById("name9").addEventListener("click", function() {PersonIDSearch(9)});
-      document.getElementById("profile_path10").addEventListener("click", function() {PersonIDSearch(10)});
-      document.getElementById("name10").addEventListener("click", function() {PersonIDSearch(10)});
-      document.getElementById("profile_path11").addEventListener("click", function() {PersonIDSearch(11)});
-      document.getElementById("name11").addEventListener("click", function() {PersonIDSearch(11)});
-      document.getElementById("profile_path12").addEventListener("click", function() {PersonIDSearch(12)});
-      document.getElementById("name12").addEventListener("click", function() {PersonIDSearch(12)});
-      document.getElementById("profile_path13").addEventListener("click", function() {PersonIDSearch(13)});
-      document.getElementById("name13").addEventListener("click", function() {PersonIDSearch(13)});
-      document.getElementById("profile_path14").addEventListener("click", function() {PersonIDSearch(14)});
-      document.getElementById("name14").addEventListener("click", function() {PersonIDSearch(14)});
-      document.getElementById("profile_path15").addEventListener("click", function() {PersonIDSearch(15)});
-      document.getElementById("name15").addEventListener("click", function() {PersonIDSearch(15)});
-      document.getElementById("profile_path16").addEventListener("click", function() {PersonIDSearch(16)});
-      document.getElementById("name16").addEventListener("click", function() {PersonIDSearch(16)});
-      document.getElementById("profile_path17").addEventListener("click", function() {PersonIDSearch(17)});
-      document.getElementById("name17").addEventListener("click", function() {PersonIDSearch(17)});
-      document.getElementById("profile_path18").addEventListener("click", function() {PersonIDSearch(18)});
-      document.getElementById("name18").addEventListener("click", function() {PersonIDSearch(18)});
-      document.getElementById("profile_path19").addEventListener("click", function() {PersonIDSearch(19)});
-      document.getElementById("name19").addEventListener("click", function() {PersonIDSearch(19)});
-      document.getElementById("profile_path20").addEventListener("click", function() {PersonIDSearch(20)});
-      document.getElementById("name20").addEventListener("click", function() {PersonIDSearch(20)});
-      document.getElementById("profile_path21").addEventListener("click", function() {PersonIDSearch(21)});
-      document.getElementById("name21").addEventListener("click", function() {PersonIDSearch(21)});
-      document.getElementById("profile_path22").addEventListener("click", function() {PersonIDSearch(22)});
-      document.getElementById("name22").addEventListener("click", function() {PersonIDSearch(22)});
-      document.getElementById("profile_path23").addEventListener("click", function() {PersonIDSearch(23)});
-      document.getElementById("name23").addEventListener("click", function() {PersonIDSearch(23)});
-      // Fuction PersonIDSearch will pull the person id and opens a new window that calls function PersonDtlCrdSearch on load to display the person details
-      function PersonIDSearch(profilepthNbr) {
-        var PrsnIdIndex = profilepthNbr;
-        /* Get the person name for the form */
-        var personname = document.getElementById("personname").value;
-        	/* Build up the parameters for the URL */
-        var api_key = "e5e088b9fdaef1249c47887b5e5eef39";
-        var language = "en-US";
-        var page = "1";
-        var include_adult = "false";
-        var query = encodeURI(personname);  /* encode the Albumname since it might have blanks */  
-        var myURL = "https://theaudiodb.com/api/v1/json/2/search.php?s=" + api_key + "&language=" + language + "&query=" + query + "&page="  + page + "&include_adult=" + include_adult;
-        	/* Display the URL */
-        document.getElementById("url1").innerHTML = myURL;
-        	/* AJAX Method - Use GET since the parameters are in the URL */
-        var myMethod = "GET";
-        	/* Make sure the document is ready */
-        $(document).ready(function() { 
-        	/* Perform AJAX call - Pass to it the Method (GET) and the URL*/
-        $.ajax({
-          method: myMethod,
-          url: myURL
-        })
-        	/* AJAX complete - result is in msg */
-        .done(function(msg) {
-        	//Move the person id to variable onloadPersonId
-        var onloadPersonId = msg.results[PrsnIdIndex].id;	
-        	//localStorage object stores data with no expiration date. 
-        	//The data will not be deleted when the browser is closed, and will be available the next day, week, or year
-        localStorage.setItem("personIdPass", onloadPersonId);
-        	//The open() method opens a new browser window, or a new tab
-        window.open("advPersonSearchDetailsCredits.html", "_self");
-        	});
-        });
-        }
-    </script>
-    <!--  External Script Files  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="assets/scripts/index.js"></script>
+  </div>  
+</div>
+
+<!--<footer class="bg-dark pb-2 pt-1 text-secondary text-center fixed-bottom">&copy 2022 Nika Tavasoly | <a href="#top">Back to Top</a>
+</footer>-->
+
+<script src="assets/scripts/index.js"></script>
   </body>
 </html>
