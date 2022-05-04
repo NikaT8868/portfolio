@@ -31,14 +31,14 @@
         <!--<a href="#"><img class="websiteLogo" src="assets/images/websiteLogo4.png" alt="Arkansas Music Database"></a>-->
         <!--<a href="#" onclick="openRedirect('index.html')"><i class="fa fa-home"></i> Home</a>-->
         <a href="homepage.html" class="active">Home</a>
-        <div class="dropdown">
+        <!--<div class="dropdown">
           <button class="dropbtn">Browse by Name<i class="fa fa-caret-down"></i></button>
           <div class="dropdown-content">
-            <!--<a href="#" class="active" onclick="openRedirect('BrowseAlbums.html')">Browse Albums</a>-->
+            <a href="#" class="active" onclick="openRedirect('BrowseAlbums.html')">Browse Albums</a>
             <a href="BrowseArtists.html">Browse Artists</a>
-           <!--<a href="BrowseSongs.html">Browse Songs</a>-->
+           <a href="BrowseSongs.html">Browse Songs</a>
           </div>
-        </div>
+        </div>-->
         <div class="dropdown">
           <button class="dropbtn">Search<i class="fa fa-caret-down"></i></button>
           <div class="dropdown-content">
@@ -50,8 +50,21 @@
         </div>
         <a href="NewArtist.html">Submit New Artist</a>
         <a href="about.html">About</a>
-        <!-- Trigger/Open The Modal -->
-        <a href="#contact" id="CntcMdlBtn">Contact</a>    
+        <!-- Trigger/Open The Modal 
+        <a href="#contact" id="CntcMdlBtn">Contact</a>-->
+        <div id="containerB">
+      
+          <!-- Modal box for contact info -->
+          <div id="CntcModal" class="cntc-modal">
+            <!-- Modal content -->
+            <div class="cntc-modal-content">
+              <span class="modal-close">&times;</span>
+              <h2>Contact</h2>
+              <p>htavasoly@ualr.edu</p>
+            </div>
+          </div>  
+        </div>
+      
                 
           <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
   	  <a href="javascript:void(0);" class="icon" onclick="topNavIconClk()">&#9776;</a>
